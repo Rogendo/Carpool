@@ -1,5 +1,3 @@
-
-
 <h1 align="center">Carpool</h1>
 
 <p align="center"> Intro - Welcome to carpool, Your ultimate car sharing platform</p>
@@ -16,9 +14,6 @@
   <li>Ride Booking</li>
 </ul>
 
-
-
-
 <h3> Download & Installation </h3>
 
 ```shell
@@ -33,3 +28,11 @@ $ npm install
 <h3>License</h3>
 
 Licensed under MIT
+
+# Initialize the application using expo
+
+-npx create-expo-app carpool
+
+## work on the register page
+
+- liblary react-native elements
