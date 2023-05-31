@@ -16,7 +16,12 @@ export default function App() {
           <Stack.Screen
             name="Register"
             component={Register}
-            options={{ title: "Register" }}
+            options={{
+              title: "Register",
+              headerStyle: {
+                backgroundColor: "#d9d9d9",
+              },
+            }}
           />
           <Stack.Screen
             name="Login"

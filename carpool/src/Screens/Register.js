@@ -16,24 +16,134 @@ const Register = ({ navigation }) => {
     password: "",
     retypePassword: "",
     checked: false,
+    errorMsg: "",
+    error: false,
   };
   const [state, setState] = useState(initialState);
+
   const toggleCheckbox = () => {
     setState({ ...state, checked: !state.checked });
+  };
+  const onChangeEmail = (newemail) => {
+    setState({ ...state, email: newemail });
+  };
+  const onSubmit = () => {
+    const {
+      firstName,
+      lastName,
+      password,
+      phone,
+      recoveryEmail,
+      retypePassword,
+      email,
+      checked,
+    } = state;
+    if (
+      !firstName ||
+      !lastName ||
+      !password ||
+      !phone ||
+      !recoveryEmail ||
+      !retypePassword ||
+      !email
+    ) {
+      setState({
+        ...state,
+        error: true,
+        errorMsg: "please provide all values",
+      });
+      setTimeout(() => {
+        setState({ ...state, error: false, errorMsg: "" });
+      }, 3000);
+    }
+    if (!checked) {
+      setState({
+        ...state,
+        error: true,
+        errorMsg: "Accept terms and conditions",
+      });
+      setTimeout(() => {
+        setState({ ...state, error: false, errorMsg: "" });
+      }, 3000);
+    }
+    if (!retypePassword === password) {
+      setState({
+        ...state,
+        error: true,
+        errorMsg: "please match the passwords",
+      });
+      setTimeout(() => {
+        setState({ ...state, error: false, errorMsg: "" });
+      }, 3000);
+    }
+    console.log(state);
   };
   return (
     <View style={styles.container}>
       <Text h4 h4Style>
         Register
       </Text>
-
-      <FormElement name="e-mail" placeholder="user@gmail.com" />
-      <FormElement name="first name" placeholder="username" />
-      <FormElement name="last name" placeholder="userlastname" />
-      <FormElement name="Recovery email" placeholder="recovery@gmail.com" />
-      <FormElement name="phone" placeholder="+254 *********" />
-      <FormElement name="password" placeholder="****" />
-      <FormElement name="Retype password" placeholder="****" />
+      {state.error && (
+        <Text
+          h1
+          h1Style={{
+            fontSize: 25,
+            fontWeight: "700",
+            textAlign: "center",
+            color: " #ff5c33",
+            textShadowColor: "",
+            letterSpacing: 1,
+          }}
+        >
+          please provide all values!
+        </Text>
+      )}
+      <FormElement
+        name="e-mail"
+        placeholder="user@gmail.com"
+        value={state.email}
+        onchange={onChangeEmail}
+      />
+      <FormElement
+        name="first name"
+        placeholder="username"
+        value={state.firstName}
+        onchange={(firstName) => setState({ ...state, firstName })}
+      />
+      <FormElement
+        name="last name"
+        placeholder="userlastname"
+        value={state.lastName}
+        onchange={(lastName) => setState({ ...state, lastName })}
+      />
+      <FormElement
+        name="Recovery email"
+        placeholder="recovery@gmail.com"
+        value={state.recoveryEmail}
+        onchange={(recoveryEmail) => setState({ ...state, recoveryEmail })}
+      />
+      <FormElement
+        name="phone"
+        placeholder="+254 *********"
+        value={state.phone}
+        onchange={(phone) => setState({ ...state, phone })}
+      />
+      <FormElement
+        name="password"
+        placeholder="****"
+        secureTextEntry={true}
+        value={state.password}
+        onchange={(password) => setState({ ...state, password })}
+      />
+      <FormElement
+        name="Retype password"
+        placeholder="****"
+        secureTextEntry={true}
+        value={state.retypePassword}
+        onchange={(password) =>
+          setState({ ...state, retypePassword: password })
+        }
+      />
       <CheckBox
         style={{ marginTop: 10 }}
         checked={state.checked}
@@ -56,8 +166,11 @@ const Register = ({ navigation }) => {
         <Button
           style={styles.button}
           title="Register"
+          titleStyle={{ fontSize: 20, letterSpacing: 1 }}
           size="sm"
-          color="primary"
+          color=""
+          radius={8}
+          onPress={onSubmit}
         ></Button>
         <TouchableOpacity
           onPress={() => navigation.navigate("Login")}
@@ -67,7 +180,6 @@ const Register = ({ navigation }) => {
             alignItems: "center",
             gap: 16,
             margin: 20,
-            // marginBottom: 10,
           }}
         >
           <Text
@@ -85,7 +197,7 @@ const Register = ({ navigation }) => {
 };
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#f2f2f2",
+    backgroundColor: "#e6e6e6",
     height: "100%",
     width: "100%",
     padding: 6,

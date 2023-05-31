@@ -1,7 +1,13 @@
 import React from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 import { Text } from "@rneui/base";
-const FormElement = ({ name, placeholder }) => {
+const FormElement = ({
+  name,
+  placeholder,
+  onchange,
+  value,
+  secureTextEntry,
+}) => {
   return (
     <View style={styles.viewStyles}>
       <Text style={styles.textStyles}>{name}</Text>
@@ -9,6 +15,9 @@ const FormElement = ({ name, placeholder }) => {
         style={styles.inputStyles}
         placeholder={placeholder}
         autoCapitalize="none"
+        defaultValue={value}
+        onChangeText={onchange}
+        secureTextEntry={secureTextEntry}
       />
     </View>
   );
