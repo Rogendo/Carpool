@@ -26,7 +26,12 @@ export default function App() {
           <Stack.Screen
             name="Login"
             component={Login}
-            options={{ title: "Login" }}
+            options={{
+              title: "Login",
+              headerStyle: {
+                backgroundColor: "#d9d9d9",
+              },
+            }}
           />
         </Stack.Navigator>
       </NavigationContainer>

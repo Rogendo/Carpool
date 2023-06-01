@@ -185,7 +185,7 @@ const Register = ({ navigation }) => {
           <Text
             style={{ borderBottomWidth: 1, fontSize: 18, letterSpacing: 0.3 }}
           >
-            Already have account?
+            Already have an account?
           </Text>
           <Text h4 style={{ color: "#076cf8", letterSpacing: 0.5 }}>
             Login
@@ -203,9 +203,6 @@ const styles = StyleSheet.create({
     padding: 6,
     // marginTop: 40,
     justifyContent: "space-evenly",
-  },
-  button: {
-    width: "60%",
   },
 });
 export default Register;
