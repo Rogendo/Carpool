@@ -7,6 +7,7 @@ import GoogleSignIn from "../Components/GoogleSignIn";
 import IosSignIn from "../Components/IosSignIn";
 import { useNavigation } from "@react-navigation/native";
 import Policy from "../Components/Policy";
+import useGlobalContext from "../context/appContext";
 //   name,
 // placeholder,
 // onchange,
@@ -16,7 +17,14 @@ const Login = () => {
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { isLoggedIn } = useGlobalContext();
   const onSubmit = () => {};
+  const navigateToDashBoard = () => {
+    navigation.navigate("User");
+  };
+  if (isLoggedIn) {
+    navigateToDashBoard();
+  }
   return (
     <View style={styles.container}>
       <View style={{ flex: 1, justifyContent: "space-evenly" }}>
@@ -49,7 +57,7 @@ const Login = () => {
           }}
           color=""
           radius={8}
-          onPress={onSubmit}
+          onPress={() => console.log("log in")}
           iconPosition="right"
           icon={<FontAwesome name="send" size={24} color="white" />}
         ></Button>
