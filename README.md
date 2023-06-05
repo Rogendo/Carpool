@@ -29,7 +29,7 @@ $ npm install
 
 - [Peter Rogendo](https://www.github.com/Rogendo)
 - [Timothy Munene](https://github.com/Tim-mune)
-- [Sharon Shang'ach](https://github.com/changach-3000)
+- [Sharon Chang'ach](https://github.com/changach-3000)
 
 <h3>License</h3>
 
