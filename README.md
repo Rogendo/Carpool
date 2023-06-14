@@ -24,7 +24,7 @@ Our database of use is postgresql
 1. You need to have postgresql installed in your machine
 2. Create a new database named 'carpool' in postgresql using the postgres command 
 ```
-CREATE DATABASE carpool
+CREATE DATABASE carpool ;
 ```
 
 Windows and Linux with Python 3.8 ++
