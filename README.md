@@ -18,11 +18,49 @@
 
 
 
+# How to run Backend Localhost
+# DATABASE
+Our database of use is postgresql
+1. You need to have postgresql installed in your machine
+2. Create a new database named 'carpool' in postgresql using the postgres command 
+```
+CREATE DATABASE carpool
+```
 
-<h3> Download & Installation </h3>
+Windows and Linux with Python 3.8 ++
 
-```shell
-$ npm install
+1. Clone this repository
+
+```
+git clone  https://github.com/Rogendo/Carpool.git
+```
+```
+cd Mental-health-Chatbot/
+```
+
+2. Create and activate virtual environment 
+
+```
+python -m venv venv
+```
+on Linux system
+```
+source venv/bin/activate
+```
+on Windows system
+```
+.\venv\Scripts\activate.bat
+```
+3. Install requirements
+
+```
+pip install  -r requirements.txt
+```
+
+4. Run the localhost  server
+```
+python manage.py runserver
+
 ```
 
 ## Authors
