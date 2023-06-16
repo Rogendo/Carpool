@@ -38,7 +38,7 @@ Windows and Linux with Python 3.8 ++
 git clone  https://github.com/Rogendo/Carpool.git
 ```
 ```
-cd Carpool/
+cd backend/Carpool/
 ```
 
 2. Create and activate virtual environment 
