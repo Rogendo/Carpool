@@ -1,5 +1,4 @@
-
-
+<p align="center"><img src="logo.png" /></p>
 <h1 align="center">Carpool</h1>
 
 <p align="center"> Intro - Welcome to carpool, Your ultimate car sharing platform</p>
@@ -9,16 +8,20 @@
 <p> This is a Ridesharing or car-sharing app, it is a platform that connects individuals who are traveling in the same direction and allows them to share rides together. The main purpose of a carpooling mobile app is to optimize transportation resources, reduce traffic congestion, and promote eco-friendly travel options.</p>
 <h3> List of features </h3>
 
+
+<h3> List of features </h3>
 <ul>
   <li>User Registration</li>  
   <li>Ride Listing</li>
   <li>Ride Sharing</li>
   <li>Ride Booking</li>
 </ul>
+<h2>How to run Front-end Localhost</h2>
 
 
 
-<h3>How to run Backend Localhost</h3>
+
+<h2>How to run Backend Localhost</h2>
 <h4> DATABASE </h4>
 Our database of use is postgresql
 1. You need to have postgresql installed in your machine
@@ -35,7 +38,7 @@ Windows and Linux with Python 3.8 ++
 git clone  https://github.com/Rogendo/Carpool.git
 ```
 ```
-cd Carpool/
+cd backend/Carpool/
 ```
 
 2. Create and activate virtual environment 
@@ -62,13 +65,16 @@ pip install  -r requirements.txt
 python manage.py runserver
 
 ```
+<h3>Contributing</h3>
+Keep it simple..
 
-## Authors
+<h3>Author or Acknowledgments</h3>
 
 - [Peter Rogendo](https://www.github.com/Rogendo)
 - [Timothy Munene](https://github.com/Tim-mune)
 - [Sharon Chang'ach](https://github.com/changach-3000)
 
+
 <h3>License</h3>
 
-Licensed under MIT
+This project is licensed under the MIT License
