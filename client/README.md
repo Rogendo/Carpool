@@ -6,6 +6,8 @@
 
 ```
 using simulator or emulator
+- make sure you have android studio installed and the necessary sdk and a virtual image. Also, add a ANDROID_HOME path to your env variables on your pc before spinning up the emulator or simulator
+
 - npm start to start development server then press a on the terminal
 
 - using with expo on Real device
@@ -19,6 +21,8 @@ good luck.
 # Styling and ui libs
 
 -react-native-base
+
+- native paper (material design)
 
 - styles.js for custom styling
 
@@ -50,3 +54,7 @@ good luck.
 # Animations.
 
 - reanimated 3
+
+# mock data
+
+- Open to any new creative ideas concerning the rides

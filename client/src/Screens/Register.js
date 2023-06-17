@@ -3,7 +3,8 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { useState } from "react";
 import { Text, ScrollView, Box, Button } from "native-base";
 import { SafeAreaView } from "react-native-safe-area-context";
-import FormFields from "../Components/FormFields";
+import { FormFields } from "../Components";
+import Toast from "react-native-toast-message";
 import useGlobalContext from "../../Context/AppContext";
 const Register = ({ navigation }) => {
   const initialState = {
@@ -17,12 +18,54 @@ const Register = ({ navigation }) => {
   };
   const [state, setState] = useState(initialState);
   const [isChecked, setCheked] = useState(false);
+  const onSubmit = () => {
+    const {
+      firstname,
+      lastname,
+      email,
+      phone,
+      password,
+      confirmpassword,
+      recoveryemail,
+    } = state;
+    if (
+      !firstname ||
+      !lastname ||
+      !email ||
+      !phone ||
+      !password ||
+      !confirmpassword ||
+      !recoveryemail ||
+      !isChecked
+    ) {
+      Toast.show({
+        text1: "Invalid input",
+        text2: "Please provide all values",
+        visibilityTime: 2000,
+      });
+    } else {
+      console.log("submit successful");
+    }
+  };
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#d9d9d9", padding: 7 }}>
-      <Text color={"black"} fontSize={24} letterSpacing={1} marginTop={5}>
+      <Text
+        color={"black"}
+        bold
+        fontSize={24}
+        letterSpacing={1}
+        marginTop={5}
+        textAlign={"center"}
+      >
         Register.
       </Text>
-      <ScrollView marginTop={3}>
+      <ScrollView
+        marginTop={3}
+        scrollEventThrottle={400}
+        keyboardDismissMode="interactive"
+        showsVerticalScrollIndicator={false}
+        decelerationRate={"normal"}
+      >
         <FormFields
           name="First name"
           onchange={(e) => setState({ ...state, firstname: e })}
@@ -91,6 +134,7 @@ const Register = ({ navigation }) => {
         </Box>
         <Box>
           <Button
+            onPressIn={onSubmit}
             style={{ backgroundColor: "#0B2447" }}
             w={"2/3"}
             alignSelf={"center"}
@@ -112,7 +156,7 @@ const Register = ({ navigation }) => {
             }}
           >
             <Text
-              style={{ borderBottomWidth: 1, fontSize: 18, letterSpacing: 0.3 }}
+              style={{ borderBottomWidth: 1, fontSize: 17, letterSpacing: 0.3 }}
             >
               Already have an account?
             </Text>
@@ -122,6 +166,7 @@ const Register = ({ navigation }) => {
           </TouchableOpacity>
         </Box>
       </ScrollView>
+      <Toast />
     </SafeAreaView>
   );
 };

@@ -34,7 +34,11 @@ export default function App() {
                   name="Register"
                   component={Register}
                 />
-                <Stack.Screen name="Login" component={Login} />
+                <Stack.Screen
+                  options={{ headerShown: false }}
+                  name="Login"
+                  component={Login}
+                />
               </Stack.Group>
               <Stack.Screen name="MainScreen" component={MainScreen} />
             </Stack.Navigator>
