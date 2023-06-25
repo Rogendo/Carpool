@@ -23,3 +23,5 @@ social-auth-core==4.4.2
 sqlparse==0.4.4
 typing_extensions==4.6.2
 urllib3==2.0.2
+django-jazzmin==2.6.0
+djangorestframework==3.14.0
