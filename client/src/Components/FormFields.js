@@ -1,4 +1,5 @@
 import { Input, Text, Box } from "native-base";
+
 const FormFields = ({
   name,
   placeholder,
@@ -17,7 +18,10 @@ const FormFields = ({
       marginY={3}
     >
       <Text
-        fontSize={17}
+        lineBreakMode=""
+        numberOfLines={2}
+        maxW={20}
+        fontSize={14}
         letterSpacing={0.7}
         color={"black"}
         textTransform={"capitalize"}
@@ -25,7 +29,9 @@ const FormFields = ({
         {name}
       </Text>
       <Input
+        h={"10"}
         w={"3/4"}
+        keyboardAppearance="default"
         fontSize={14}
         margin={0.3}
         textAlign={"center"}

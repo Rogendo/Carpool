@@ -5,6 +5,7 @@ import { Text, ScrollView, Box, Button } from "native-base";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FormFields } from "../Components";
 import Toast from "react-native-toast-message";
+import { PixelRatio } from "react-native";
 import useGlobalContext from "../../Context/AppContext";
 const Register = ({ navigation }) => {
   const initialState = {
@@ -60,6 +61,7 @@ const Register = ({ navigation }) => {
         Register.
       </Text>
       <ScrollView
+        keyboardShouldPersistTaps={"always"}
         marginTop={3}
         scrollEventThrottle={400}
         keyboardDismissMode="interactive"
@@ -69,7 +71,7 @@ const Register = ({ navigation }) => {
         <FormFields
           name="First name"
           onchange={(e) => setState({ ...state, firstname: e })}
-          placeholder="enter your name"
+          placeholder="enter your first name"
           value={state.firstname}
           secureTextEntry={false}
         />
@@ -90,7 +92,7 @@ const Register = ({ navigation }) => {
         <FormFields
           name="Phone"
           onchange={(e) => setState({ ...state, phone: e })}
-          placeholder="enter your name"
+          placeholder="enter your Phone"
           value={state.phone}
           secureTextEntry={false}
         />
@@ -120,6 +122,7 @@ const Register = ({ navigation }) => {
           justifyContent={"space-evenly"}
           alignItems={"center"}
           marginTop={10}
+          flexWrap={"wrap"}
         >
           <Checkbox.Item
             status={isChecked ? "checked" : "unchecked"}

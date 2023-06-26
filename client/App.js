@@ -9,16 +9,41 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import { Register, Login, Activity, Rides, Profile } from "./src/Screens";
 const Stack = createStackNavigator();
 const Tabs = createMaterialBottomTabNavigator();
-// const Tab = createBottomTabNavigator();
+// icons
+import { Ionicons } from "@expo/vector-icons";
 export default function App() {
   const MainScreen = () => {
     return (
-      <Tabs.Navigator>
-        <Tabs.Group>
-          <Tabs.Screen name="Activity" component={Activity} />
-          <Tabs.Screen name="Rides" component={Rides} />
-          <Tabs.Screen name="Profile" component={Profile} />
-        </Tabs.Group>
+      <Tabs.Navigator
+        barStyle={{
+          backgroundColor: "#ffe6e6",
+          height: 64,
+        }}
+      >
+        <Tabs.Screen
+          options={{ title: "Activity" }}
+          name="Activity"
+          component={Activity}
+        />
+        <Tabs.Screen
+          name="Rides"
+          component={Rides}
+          options={{
+            tabBarIcon: () => (
+              <Ionicons name="car-sport" size={20} color="black" />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          options={{
+            tabBarAccessibilityLabel: "Profile",
+            tabBarIcon: () => (
+              <Ionicons name="ios-person-outline" size={20} color="black" />
+            ),
+          }}
+          name="Profile"
+          component={Profile}
+        />
       </Tabs.Navigator>
     );
   };
@@ -40,7 +65,11 @@ export default function App() {
                   component={Login}
                 />
               </Stack.Group>
-              <Stack.Screen name="MainScreen" component={MainScreen} />
+              <Stack.Screen
+                options={{ headerShown: false }}
+                name="MainScreen"
+                component={MainScreen}
+              />
             </Stack.Navigator>
           </NavigationContainer>
         </NativeBaseProvider>
