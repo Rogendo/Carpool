@@ -1,7 +1,7 @@
 import { View } from "react-native";
 import { Text, Button, Box, Container } from "native-base";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { FontAwesome5 } from "@expo/vector-icons";
+
 import { FormFields, GoogleSignIn, IosSignIn, Policy } from "../Components";
 import { useState } from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";

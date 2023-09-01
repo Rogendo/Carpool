@@ -4,4 +4,13 @@ import IosSignIn from "./IosSignIn";
 import Policy from "./Policy";
 import RidesNavbar from "./RidesNavbar";
 import RidesItem from "./RidesItem";
-export { FormFields, GoogleSignIn, IosSignIn, Policy, RidesNavbar, RidesItem };
+import GetLocation from "./GetLocation";
+export {
+  FormFields,
+  GoogleSignIn,
+  IosSignIn,
+  Policy,
+  RidesNavbar,
+  RidesItem,
+  GetLocation,
+};

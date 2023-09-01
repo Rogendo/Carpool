@@ -4,11 +4,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const Activity = () => {
   return (
     <>
-      <SafeAreaView style={styles.container}>
-        <Text style={{ alignSelf: "center", textAlign: "center" }}>
-          Hello activity
-        </Text>
-      </SafeAreaView>
+      <Text style={{ alignSelf: "center", textAlign: "center" }}>
+        Hello activity
+      </Text>
     </>
   );
 };

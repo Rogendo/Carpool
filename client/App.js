@@ -6,11 +6,14 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 // screens
-import { Register, Login, Activity, Rides, Profile } from "./src/Screens";
+import { Register, Login, Activity, Rides, Profile, Map } from "./src/Screens";
 const Stack = createStackNavigator();
 const Tabs = createMaterialBottomTabNavigator();
 // icons
 import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 export default function App() {
   const MainScreen = () => {
     return (
@@ -21,9 +24,13 @@ export default function App() {
         }}
       >
         <Tabs.Screen
-          options={{ title: "Activity" }}
           name="Activity"
           component={Activity}
+          options={{
+            tabBarIcon: () => (
+              <FontAwesome name="binoculars" size={20} color="black" />
+            ),
+          }}
         />
         <Tabs.Screen
           name="Rides"
@@ -31,6 +38,19 @@ export default function App() {
           options={{
             tabBarIcon: () => (
               <Ionicons name="car-sport" size={20} color="black" />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="Maps"
+          component={Map}
+          options={{
+            tabBarIcon: () => (
+              <MaterialCommunityIcons
+                name="google-maps"
+                size={20}
+                color="black"
+              />
             ),
           }}
         />

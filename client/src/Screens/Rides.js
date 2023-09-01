@@ -7,6 +7,9 @@ const Rides = () => {
   return (
     <>
       <SafeAreaView style={styles.container}>
+      <Text style={styles.userStyles} > 
+      hello timmy boy
+    </Text>
         <RidesNavbar />
 
         <RidesItem />
@@ -18,6 +21,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     // backgroundColor: "red",
+    padding:2
   },
+  userStyles:{
+textTransform:"capitalize",
+fontSize:14,
+  }
 });
 export default Rides;
